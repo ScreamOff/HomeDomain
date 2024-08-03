@@ -100,7 +100,7 @@ label {
 
 .drop-area {
     border: 2px dashed var(--highlight-color);
-    padding: 20px;
+    padding: 50px;
     border-radius: 8px;
     background-color: var(--background-color); /* Jasnoszare tło dla lepszej widoczności */
     margin-bottom: 20px;
@@ -127,6 +127,9 @@ label {
     color: var(--text-color);
     margin-top: 10px;
     font-style: italic; /* Styl czcionki dla lepszej widoczności */
+}
+#file-input {
+    display: none;
 }
 
 
