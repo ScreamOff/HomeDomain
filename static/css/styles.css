@@ -12,18 +12,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #2d2d2d;
+    background-color: var(--primary-bg-color);
 }
 
 header {
-    background-color: #333;
+    background-color: var(--secondary-bg-color);
     color: var(--text-color);
     padding: 1rem;
     text-align: center;
 }
 
 footer {
-    background-color: #333;
+    background-color: var(--secondary-bg-color);
     color: var(--text-color);
     padding: 1rem;
     text-align: center;
@@ -31,6 +31,7 @@ footer {
 }
 
 .app-grid {
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
@@ -38,10 +39,11 @@ footer {
 }
 
 .app-item {
+    margin: auto;
     text-align: center;
     padding: 20px;
     background-color: inherit;
-    border: 2px solid #6c7b8b;
+    border: 2px solid var(--highlight-color);
     border-radius: 10px;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -86,45 +88,6 @@ footer {
     color: var(--primary-bg-color);
 }
 
-/* Stylizacja formularza przesyłania plików */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #444;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input[type="file"] {
-    padding: 10px;
-    border: 2px solid var(--highlight-color);
-    border-radius: 5px;
-    background-color: #555;
-    color: var(--text-color);
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--highlight-color);
-    color: var(--text-color);
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-    background-color: var(--text-color);
-    color: var(--highlight-color);
-}
 
 .error, .success {
     color: var(--text-color);
