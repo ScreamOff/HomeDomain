@@ -5,7 +5,7 @@ from datetime import datetime
 
 notes_blueprint = Blueprint('notes', __name__, template_folder='templates')
 
-DATA_FILE = 'applications/notes/notes.json'
+DATA_FILE = 'static/dataFiles/notes.json'
 
 # 25 kolorów dla paletki
 PALETTE_COLORS = [
@@ -16,10 +16,12 @@ PALETTE_COLORS = [
     '#B39DDB', '#0091EA', '#76FF03', '#64DD17', '#FF6F00'
 ]
 
+
 @notes_blueprint.route('/notes', methods=['GET'])
 def notes():
     notes = load_notes()
     return render_template('notes.html', notes=notes, colors=PALETTE_COLORS)
+
 
 @notes_blueprint.route('/notes/add_note', methods=['POST'])
 def add_note():
@@ -41,16 +43,19 @@ def delete_note(note_index):
         save_notes(notes)
     return redirect(url_for('notes.notes'))
 
+
 def load_notes():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'r') as f:
             return json.load(f)
     return []
 
+
 def add_note_to_list(title, content, color):
     notes = load_notes()
     notes.append({'title': title, 'content': content, 'color': color})
     save_notes(notes)
+
 
 def save_notes(notes):
     with open(DATA_FILE, 'w') as f:

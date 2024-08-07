@@ -1,12 +1,12 @@
 from flask import render_template, request, redirect, url_for
+from flask import Blueprint
 from datetime import datetime, timedelta
 import json
 import os
 
-from . import planner
-
+planner_blueprint = Blueprint('planner', __name__, template_folder='templates')
 # Ścieżka do pliku z wydarzeniami
-EVENTS_FILE = os.path.join(os.path.dirname(__file__), 'events.json')
+EVENTS_FILE = 'static/dataFiles/events.json'
 
 
 def load_events():
@@ -23,7 +23,7 @@ def save_events(events):
         json.dump(events, file, indent=4)
 
 
-@planner.route('/planner', methods=['GET', 'POST'])
+@planner_blueprint.route('/planner', methods=['GET', 'POST'])
 def show_planner():
     """Wyświetla planer z wydarzeniami na nadchodzący tydzień."""
     events = load_events()
@@ -46,7 +46,7 @@ def show_planner():
     return render_template('planner.html', events=upcoming_events)
 
 
-@planner.route('/planner/delete/<int:event_id>', methods=['POST'])
+@planner_blueprint.route('/planner/delete/<int:event_id>', methods=['POST'])
 def delete_event(event_id):
     """Usuwa wydarzenie o podanym ID."""
     events = load_events()
