@@ -1,8 +1,15 @@
 :root {
+    --primary-bg-color: #2d2d2d;
     --text-color: LightSteelBlue;
-    --highlight-color: #6c7b8b; /* Kolor podświetlenia (ciemniejsze od obramowania) */
-    --secondary-bg-color: #333; /* Kolor tła linku */
-    --primary-bg-color: #2d2d2d; /* Kolor tła na hover */
+    --highlight-color: #6c7b8b; /* Darker shade of LightSteelBlue */
+    --background-color: rgba(45, 45, 45, 1);
+    --container-background: rgba(105, 105, 105, 0.2); /* Light gray with opacity */
+    --button-background: #4f4f4f; /* Dark gray */
+    --button-text-color: LightSteelBlue;
+    --error-color: #ff4c4c; /* Light Coral */
+    --success-color: #4caf50; /* Green */
+    --secondary-bg-color: #333;
+    --button-hover-color: #6c7b8b;
 }
 
 body {

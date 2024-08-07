@@ -33,7 +33,9 @@
             {% for note in notes %}
             <div class="note" style="background-color: {{ note.color }}" onclick="toggleContent({{ loop.index0 }})">
                 <h3 class="note-title" id="title-{{ loop.index0 }}">{{ note.title }}
+                    <div class="spacer"></div>
                     <button class="delete-note" onclick="event.stopPropagation(); deleteNote({{ loop.index0 }});">✖</button>
+
                 </h3>
                 <div class="note-content" id="content-{{ loop.index0 }}">
                     <p>{{ note.content }}</p>
