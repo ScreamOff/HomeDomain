@@ -1,0 +1,78 @@
+
+#container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--container-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container{
+    max-width: 400px;
+    margin: 7px auto;
+    padding: 3px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+#wheelOfFortune {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+#wheel {
+    display: block;
+}
+
+#spin {
+    font: 1.5em/0 sans-serif;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    margin: -15%;
+    background: #fff;
+    color: #fff;
+    box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transition: 0.8s;
+}
+
+#spin::after {
+    content: '';
+    position: absolute;
+    top: -17px;
+    border: 10px solid transparent;
+    border-bottom-color: currentColor;
+    border-top: none;
+}
+
+#options-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#options-form input, #options-form button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px solid var(--highlight-color);
+    border-radius: 5px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#options-form button:hover {
+    background-color: var(--button-hover-color);
+    color: var(--primary-bg-color);
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lotto.css') }}">
+   <div id="container">
+        <div id="wheelOfFortune">
+            <canvas id="wheel" width="300" height="300"></canvas>
+            <div id="spin">SPIN</div>
+        </div>
+        <form id="options-form">
+            <input type="text" id="option-label" placeholder="Nazwa opcji" required>
+            <button type="button" id="add-option">Dodaj opcję</button>
+        </form>
+
+    </div>
+    <div id="container">
+        <div id="results">
+        </div>
+    </div>
+<script src="{{ url_for('static', filename='js/lotto.js') }}"></script>
+{% endblock %}
